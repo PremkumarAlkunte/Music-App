@@ -1,20 +1,20 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Content from './Components/Content/Content'
-import AddSongs from './Components/Addsongs/Addsongs';
-import AddArtists from './Components/Addartists/Addartists';
+import Addsongs from './Components/Addsongs/Addsongs';
+import Addartists from './Components/Addartists/Addartists';
+import Navbar from './Components/Navbar/Navbar';
 
 export default function App() {
   return (
-    <div className='App'>
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path='/' element={Content}></Route>
-        </Routes>
-      </BrowserRouter> */}
-      {/* <Content/> */}
-      <AddSongs/>
-          
-      </div>
+    <>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/' component={Content}></Route>
+          <Route exact path='/addsongs' component={Addsongs}></Route>
+          <Route exact path='/addartists' component={Addartists} ></Route>
+        </Switch>
+      </BrowserRouter>
+    </>
   )
 }

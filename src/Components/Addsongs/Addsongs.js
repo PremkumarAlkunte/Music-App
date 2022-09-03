@@ -1,58 +1,72 @@
-import React from 'react'
-import AddArtists from '../Addartists/Addartists'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import './Addsongs.css'
+import Navbar from '../Navbar/Navbar'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import FileBase64 from "react-file-base64";
 
 export default function Form() {
-  const[addArtist,setAddArtist]=useState(false);
+  
+    const[data,setData]=useState({
+      songname:"",
+      date:"",
+      artwork:"",
+      artist:"",
+    })
+    const handleAdd=()=>{
+      console.log(data)
+      console.log("handleAdd works")
+      axios({
+        url: "",
+        method: "POST",
+        headers: {
+        },
+        data: data
+    }).then((res)=> {
+        console.log(res)
+    }).catch((err)=> {
+        console.log(err)
+    })
+    }
+    
+  
 
   return (
+    
     <div className='form'>
-        <h2>
-            Add a New Song
-        </h2>
+      <Navbar/>
+        <h3 className='addsong'>
+            Adding a New Song
+        </h3>
         <form>
            <div><label className='songname'>Song Name</label>
-            <input type='text'></input></div>
+            <input onChange={e => setData({ ...data, songname: e.target.value })} className='song' type='text'></input></div>
             <div><label className='songname'>Date Released</label>
-            <input type='text'></input></div>
-            <label className='artwork'>Artwork</label>
-            <button>Upload Image</button>
+            <input onChange={e => setData({ ...data, date: e.target.value })} className='date-birth' type='text'></input></div>
+            <label className='artwork'>Artwork Image</label>
+            {/* <input type='file' placeholder='Upload File'></input> */}
+            <FileBase64 
+                    type="file"
+                    multiple={false}
+                    onDone={({ base64 }) => setData({ ...data, artwork: base64 })}
+                    
+                    />
             <div><label className='artists'>Artists</label>
-            <button>Search</button>
-            <button onClick={()=> setAddArtist(true)}>+  Add Artists</button>
+            <select onChange={e => setData({ ...data, artist: e.target.value })} className="form-select" id='select' aria-label="Default select example">
+                 <option value='selected'>Search</option>
+                 <option value="1">One</option>
+                 <option value="2">Two</option>
+                 <option value="3">Three</option>
+            </select>
+            <Link to='/addartists'><button className='artist'>+  Add Artists</button></Link>
             
             </div>
-            <div>
-            <button>Cancel</button>
-            <button>Save</button>   
+            <div className='sv-button'>
+            <Link to='/'><button className='cancel'>Cancel</button></Link>
+            <button className='save' onClick={handleAdd}>Save</button>   
              
             </div>
         </form>
-        <AddArtists trigger={addArtist} setTrigger={setAddArtist}>
-              <h2>Add Artists</h2>
-              <hr/>
-              
-                <form>
-                <div>
-                  <lable>Artist Name</lable>
-                  <input type='text'></input>
-                  </div>
-                  <div>
-                  <lable>Date of Birth</lable>
-                  <input type='date'></input>
-                  </div>
-                  <div>
-                  <lable>Bio</lable>
-                  <input type='text'></input>
-                  </div>
-                  <div>
-                  <button className='cancel-btn'>Cancel</button>
-                    
-                  <button>Save</button>
-                  </div>
-                </form>
-              
-            </AddArtists>
     </div>
   )
 }

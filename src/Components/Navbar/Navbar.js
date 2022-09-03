@@ -3,16 +3,12 @@ import './Navbar.css'
 
 export default function Navbar() {
   return (
-    <div className='navbar'>
-      <nav className="navbar bg-light">
-      <div className="container-fluid">
-        <a className="navbar-brand"><button>Home</button></a>
-          <form className="search" role="search">
-            <input className="searchbar" type="search" placeholder="Search" aria-label="Search"/>
-            {/* <button className="" type="submit">Search</button> */}
-          </form>
-      </div>
-      </nav>
-    </div>
+    <nav className="navbar navbar-light bg-light justify-content-between" id='navbar'>
+  <a className="navbar-brand" id='home'>Home</a>
+  <form className="form-inline">
+    <input id='search' className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+    <button id='srch-btn' className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
   )
 }

@@ -1,18 +1,20 @@
 .content-heading{
+    margin-top: 20px;
     display: flex;
     position: relative;
 }
-.button{
-   padding-top: 20px; 
-    
+.my-button{
+   left: 900px;   
 }
-.btn{
+#add-btn{
     position: absolute;
     right: 20px;
-    height: 30px;
-    width: 100px;
 }
+
 .heading{
     padding-left: 20px;
-    top: 0px;
+    
+}
+.my-table{
+    margin-top: 20px;
 }

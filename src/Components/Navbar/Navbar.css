@@ -1,36 +1,12 @@
-.navbar{
-    background-color: lightgrey;
-    height: 80px;
-}
-.container-fluid{
-    padding-top: 20px;
-}
-.navbar-brand{
-    padding: 50px;
-
-}
-.search{
-    
-    float: right;
-    padding-right: 50px;
-    height: 40px;
+#navbar{
+    width: 100vw;
     
 }
-.searchbar{
-    background-image: url(https://img.icons8.com/ios-glyphs/30/search--v1.png); float: left;background-repeat:no-repeat;
-    height: 30px;
-    width: 300px;
-    border-radius: 15px;
-    font-size: large;
-    padding-left: 30px;
-
+#search{
+    position: absolute;
+    left: 800px;
 }
-.navbar-brand button{
-    background-color: lightgrey;
-    font-size: large;
-    height: 40px;
-    width: 80px;
-}
-.navbar-brand button:hover{
-    background-color:aliceblue;
+#srch-btn{
+    position: relative;
+    left: 970px;
 }
