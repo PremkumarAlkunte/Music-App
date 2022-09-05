@@ -36,7 +36,7 @@ export default function Form() {
         return data.json();
       })
       .then((artistData) => {
-        console.log(artistData[1].artistname)
+        // console.log(artistData[1].artistname)
         setArtistData(artistData.reverse());
       });
   }, []);

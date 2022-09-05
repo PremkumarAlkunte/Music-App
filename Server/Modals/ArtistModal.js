@@ -10,6 +10,7 @@ const ArtistSchema=new mongoose.Schema({
     bio:{
         type:String,
     },
+    songs:[]
 });
 
 const ArtistModal=mongoose.model("Artist",ArtistSchema);

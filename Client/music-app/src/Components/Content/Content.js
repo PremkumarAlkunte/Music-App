@@ -89,7 +89,7 @@ export default function Content() {
       <tr>
       <th scope="row">{myartist.artistname}</th>
       <td>{myartist.date}</td>
-      <td>{myartist.song}</td>
+      <td>{myartist.songs.join(",")}</td>
       
       
     </tr>
