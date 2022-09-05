@@ -1,0 +1,12 @@
+#navbar{
+    width: 100vw;
+    
+}
+#search{
+    position: absolute;
+    left: 800px;
+}
+#srch-btn{
+    position: relative;
+    left: 970px;
+}

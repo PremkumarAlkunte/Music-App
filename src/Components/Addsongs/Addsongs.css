@@ -1,0 +1,53 @@
+.form{
+    height: 100vh;
+    width: 100vw;
+}
+.addsong{
+    margin-top: 100px;
+    padding-left: 450px;
+}
+label{
+    /* position: relative;
+    left: 20px; */
+    margin-top: 50px;
+}
+input{
+    position: relative;  }
+.song{
+    width: 300px;
+    left: 144px;
+}
+.date-birth{
+    width: 300px;
+    left: 126px;
+}
+.sv-button{
+    margin-top: 50px;
+}
+button{
+    position: relative;
+}
+/* .upload{
+    left: 170px;
+    width: 150px;
+} */
+
+#select{
+    position: relative;
+    left:180px;
+    width: 300px;
+}
+.artist{
+    left: 240px;
+    width: 150px;
+}
+.save{
+    left: 120px;
+    width: 100px;
+    background-color: grey;
+    color: aliceblue;
+}
+.cancel{
+    width: 100px;
+    
+}
